@@ -2,6 +2,8 @@
 
 This repository contains all of the markdown files used by Nuxt Content to generate the archive section on Classic Mini DIY's main website.
 
+> Note: You must also update the [content.config.ts](https://github.com/Classic-Mini-DIY/classicminidiy/blob/main/content.config.ts) in the main repo as well when creating new collections
+
 ## Purpose
 
 The purpose of this repository is to store and manage the content for the archive section, ensuring that all information is organized and easily accessible. Without muddying the main website repository with content, this repository allows for easy updates and contributions to the archive section.
