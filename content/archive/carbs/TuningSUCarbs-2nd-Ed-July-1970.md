@@ -1,12 +1,11 @@
 ---
-    title: Tuning_SU_Carbs 2nd Ed July 1970
+    title: Tuning SU Carbs
     slug: TuningSUCarbs-2nd-Ed-July-1970
-    description:
+    description: 2nd Edition July 1970
     code: TuningSUCarbs-2nd-Ed-July-1970
-    image: 
+    image:
     download: https://cmdiy-archive.s3.us-east-1.amazonaws.com/carbs/documents/Tuning_SU_Carbs+2nd+Ed+July+1970.pdf
 ---
 <!-- Content of the page -->
 
 ##
-        

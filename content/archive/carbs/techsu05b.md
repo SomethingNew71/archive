@@ -1,5 +1,5 @@
 ---
-    title: tech_su_05b
+    title: Technical Drawing - 1
     slug: techsu05b
     description:
     code: techsu05b
@@ -9,4 +9,3 @@
 <!-- Content of the page -->
 
 ##
-        

@@ -1,5 +1,5 @@
 ---
-    title: tech_su_05a
+    title: HIF Carburetor Side View
     slug: techsu05a
     description:
     code: techsu05a
@@ -9,4 +9,3 @@
 <!-- Content of the page -->
 
 ##
-        
