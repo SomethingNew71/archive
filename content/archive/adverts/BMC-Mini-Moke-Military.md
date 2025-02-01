@@ -3,10 +3,6 @@
     slug: BMC-Mini-Moke-Military
     description:
     code: BMC-Mini-Moke-Military
-    image:
+    image: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/images/BMC+Mini+Moke+Military.jpeg
     download: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/documents/BMC+Mini+Moke+Military.pdf
 ---
-<!-- Content of the page -->
-
-##
-        

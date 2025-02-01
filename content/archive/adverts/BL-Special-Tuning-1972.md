@@ -3,10 +3,6 @@
     slug: BL-Special-Tuning-1972
     description:
     code: BL-Special-Tuning-1972
-    image:
+    image: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/images/BL+Special+Tuning+1972.jpeg
     download: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/documents/BL+Special+Tuning+1972.pdf
 ---
-<!-- Content of the page -->
-
-##
-        

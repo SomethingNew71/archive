@@ -3,10 +3,6 @@
     slug: Mini-HLE-Mayfair-Sport-1985-D
     description:
     code: Mini-HLE-Mayfair-Sport-1985-D
-    image:
+    image: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/images/Mini+HLE+Mayfair+Sport+1985+D.jpeg
     download: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/documents/Mini+HLE+Mayfair+Sport+1985+D.pdf
 ---
-<!-- Content of the page -->
-
-##
-        

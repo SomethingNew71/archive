@@ -3,10 +3,6 @@
     slug: Wolseley-Hornet-1961
     description:
     code: Wolseley-Hornet-1961
-    image:
+    image: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/images/Wolseley+Hornet+1961.jpeg
     download: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/documents/Wolseley+Hornet+1961.pdf
 ---
-<!-- Content of the page -->
-
-##
-        

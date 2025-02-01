@@ -3,10 +3,6 @@
     slug: Mini-Van-Pickup-1972
     description:
     code: Mini-Van-Pickup-1972
-    image:
+    image: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/images/Mini+Van+Pickup+1972.jpeg
     download: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/documents/Mini+Van+Pickup+1972.pdf
 ---
-<!-- Content of the page -->
-
-##
-        

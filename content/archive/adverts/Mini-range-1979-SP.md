@@ -3,10 +3,6 @@
     slug: Mini-range-1979-SP
     description:
     code: Mini-range-1979-SP
-    image:
+    image: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/images/Mini+range+1979+SP.jpeg
     download: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/documents/Mini+range+1979+SP.pdf
 ---
-<!-- Content of the page -->
-
-##
-        

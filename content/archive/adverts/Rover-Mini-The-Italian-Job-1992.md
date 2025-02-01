@@ -3,10 +3,6 @@
     slug: Rover-Mini-The-Italian-Job-1992
     description:
     code: Rover-Mini-The-Italian-Job-1992
-    image:
+    image: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/images/Rover+Mini+The+Italian+Job+1992.jpeg
     download: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/documents/Rover+Mini+The+Italian+Job+1992.pdf
 ---
-<!-- Content of the page -->
-
-##
-        

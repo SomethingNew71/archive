@@ -3,10 +3,6 @@
     slug: Mini-Moke-Australia
     description:
     code: Mini-Moke-Australia
-    image:
+    image: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/images/Mini+Moke+Australia.jpeg
     download: https://cmdiy-archive.s3.us-east-1.amazonaws.com/adverts/documents/Mini+Moke+Australia.pdf
 ---
-<!-- Content of the page -->
-
-##
-        
