@@ -1,0 +1,27 @@
+{
+  "name": "archive-tools",
+  "version": "1.0.0",
+  "description": "CLI tools for processing archive content",
+  "main": "dist/index.js",
+  "bin": {
+    "archive-tools": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "prepare": "npm run build"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.844.0",
+    "commander": "^11.1.0",
+    "outdent": "^0.8.0",
+    "pdf2pic": "^3.1.0",
+    "pino": "^8.21.0",
+    "pino-pretty": "^10.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.7",
+    "typescript": "^5.3.3"
+  },
+  "type": "module"
+}
