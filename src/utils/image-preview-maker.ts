@@ -30,7 +30,8 @@ interface ConversionOptions {
   density: number;
   format: 'jpeg' | 'png';
   width: number;
-  height: number;
+  height?: number;
+  preserveAspectRatio: boolean;
   page?: number;
 }
 
@@ -59,7 +60,7 @@ class ImagePreviewMaker {
       density: 100,
       format: 'jpeg',
       width: 1024,
-      height: 1024,
+      preserveAspectRatio: true,
       ...options,
     };
   }

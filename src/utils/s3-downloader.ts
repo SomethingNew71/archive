@@ -2,25 +2,21 @@ import {
   S3Client,
   ListObjectsV2Command,
   GetObjectCommand,
-} from '@aws-sdk/client-s3';
-import { writeFile, mkdir } from 'fs/promises';
-import path, { dirname } from 'path';
-import { Readable } from 'stream';
-import { fileURLToPath } from 'url';
-import { pino } from 'pino';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+} from "@aws-sdk/client-s3";
+import { writeFile, mkdir } from "fs/promises";
+import path from "path";
+import { Readable } from "stream";
+import { pino } from "pino";
 
 // Configure logger
 const logger = pino({
   transport: {
-    target: 'pino-pretty',
+    target: "pino-pretty",
     options: {
       colorize: true,
     },
   },
-  level: process.env.LOG_LEVEL || 'info',
+  level: process.env.LOG_LEVEL || "info",
 });
 
 interface S3DownloaderConfig {
@@ -44,9 +40,9 @@ export class S3Downloader {
 
     // Initialize config with required fields
     this.config = {
-      region: restConfig.region || 'us-east-1',
+      region: restConfig.region || "us-east-1",
       bucket: restConfig.bucket,
-      prefix: restConfig.prefix || '',
+      prefix: restConfig.prefix || "",
       localPath: restConfig.localPath,
       maxKeys: restConfig.maxKeys || 1000,
     };
@@ -87,11 +83,11 @@ export class S3Downloader {
       } while (continuationToken);
 
       logger.info(
-        `Found ${objects.length} objects in s3://${this.config.bucket}/${this.config.prefix}`
+        `Found ${objects.length} objects in s3://${this.config.bucket}/${this.config.prefix}`,
       );
       return objects;
     } catch (error) {
-      logger.error({ error }, 'Error listing S3 objects');
+      logger.error({ error }, "Error listing S3 objects");
       throw error;
     }
   }
@@ -100,7 +96,7 @@ export class S3Downloader {
    * Checks if a key represents a directory (ends with /)
    */
   private isDirectory(key: string): boolean {
-    return key.endsWith('/');
+    return key.endsWith("/");
   }
 
   /**
@@ -136,10 +132,10 @@ export class S3Downloader {
         await writeFile(filePath, Buffer.concat(chunks));
         logger.info(`Successfully downloaded ${key}`);
       } else {
-        throw new Error('Unexpected response body type');
+        throw new Error("Unexpected response body type");
       }
     } catch (error) {
-      logger.error({ error, key }, 'Error downloading file');
+      logger.error({ error, key }, "Error downloading file");
       throw error;
     }
   }
@@ -152,7 +148,7 @@ export class S3Downloader {
       await mkdir(directoryPath, { recursive: true });
     } catch (error: any) {
       // Handle the case where the directory already exists
-      if (error.code !== 'EEXIST') {
+      if (error.code !== "EEXIST") {
         throw error;
       }
     }
@@ -166,7 +162,7 @@ export class S3Downloader {
       const objects = await this.listObjects();
 
       if (objects.length === 0) {
-        logger.warn('No files found to download');
+        logger.warn("No files found to download");
         return;
       }
 
@@ -179,9 +175,9 @@ export class S3Downloader {
         await Promise.all(batch.map((key) => this.downloadFile(key)));
       }
 
-      logger.info('Download completed successfully');
+      logger.info("Download completed successfully");
     } catch (error) {
-      logger.error({ error }, 'Error during download process');
+      logger.error({ error }, "Error during download process");
       throw error;
     }
   }

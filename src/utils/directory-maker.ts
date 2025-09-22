@@ -1,17 +1,17 @@
-import * as fs from 'fs/promises';
-import * as path from 'path';
-import { pino } from 'pino';
-import { outdent } from 'outdent';
+import * as fs from "fs/promises";
+import * as path from "path";
+import { pino } from "pino";
+import { outdent } from "outdent";
 
 // Configure logger
 const logger = pino({
   transport: {
-    target: 'pino-pretty',
+    target: "pino-pretty",
     options: {
       colorize: true,
     },
   },
-  level: process.env.LOG_LEVEL || 'info',
+  level: process.env.LOG_LEVEL || "info",
 });
 
 interface FileMetadata {
@@ -35,7 +35,7 @@ class DirectoryMaker {
   constructor(
     prefix: string,
     awsLocation: string,
-    outputBasePath: string = 'content/archive'
+    outputBasePath: string = "content/archive",
   ) {
     this.prefix = prefix;
     this.awsLocation = awsLocation;
@@ -53,7 +53,7 @@ class DirectoryMaker {
       const outputDir = path.join(
         process.cwd(),
         this.outputBasePath,
-        this.prefix
+        this.prefix,
       );
       await this.ensureDirectoryExists(outputDir);
 
@@ -62,14 +62,14 @@ class DirectoryMaker {
 
       // Process files in parallel
       const fileProcessingPromises = files.map((filename) =>
-        this.processFile(filename, outputDir)
+        this.processFile(filename, outputDir),
       );
 
       // Wait for all files to be processed
       await Promise.all(fileProcessingPromises);
 
       logger.info(
-        `Successfully processed ${files.length} files from ${stagingFolder}`
+        `Successfully processed ${files.length} files from ${stagingFolder}`,
       );
     } catch (error) {
       logger.error({ error }, `Failed to process directory: ${stagingFolder}`);
@@ -84,11 +84,11 @@ class DirectoryMaker {
    */
   private async processFile(
     filename: string,
-    outputDir: string
+    outputDir: string,
   ): Promise<void> {
     try {
       // Skip non-PDF files
-      if (!filename.toLowerCase().endsWith('.pdf')) {
+      if (!filename.toLowerCase().endsWith(".pdf")) {
         logger.debug(`Skipping non-PDF file: ${filename}`);
         return;
       }
@@ -102,7 +102,7 @@ class DirectoryMaker {
       // Write markdown file
       const outputPath = path.join(
         outputDir,
-        `${metadata.sanitizedFileName}.md`
+        `${metadata.sanitizedFileName}.md`,
       );
       await fs.writeFile(outputPath, contents);
 
@@ -120,22 +120,22 @@ class DirectoryMaker {
    */
   private extractMetadata(filename: string): FileMetadata {
     const fileNameWithoutExt = filename
-      .substring(0, filename.lastIndexOf('.'))
+      .substring(0, filename.lastIndexOf("."))
       .trim();
 
     const sanitizedFileName = fileNameWithoutExt
-      .replace(/\s+/g, '-')
-      .replace(/[^a-zA-Z0-9-]/g, '');
+      .replace(/\s+/g, "-")
+      .replace(/[^a-zA-Z0-9-]/g, "");
 
     const sanitizedTitle = fileNameWithoutExt;
 
     const awsImage = `${this.awsLocation}/${
       this.prefix
-    }/images/${sanitizedTitle.replace(/\s+/g, '+')}.jpeg`;
+    }/images/${sanitizedTitle.replace(/\s+/g, "+")}.jpeg`;
 
     const download = `${this.awsLocation}/${
       this.prefix
-    }/documents/${filename.replace(/\s+/g, '+')}`;
+    }/documents/${filename.replace(/\s+/g, "+")}`;
 
     return {
       sanitizedFileName,
@@ -172,7 +172,7 @@ class DirectoryMaker {
       await fs.mkdir(dirPath, { recursive: true });
       logger.debug(`Ensured directory exists: ${dirPath}`);
     } catch (error) {
-      logger.error({ error, dirPath }, 'Failed to create directory');
+      logger.error({ error, dirPath }, "Failed to create directory");
       throw error;
     }
   }
