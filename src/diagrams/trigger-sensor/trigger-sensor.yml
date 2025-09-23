@@ -1,0 +1,36 @@
+metadata:
+  title: Trigger Sensor Wiring
+  description: 3-pin trigger sensor connection diagram
+
+connectors:
+  trigger_sensor:
+    type: 3-pin Junior Timer
+    pincount: 3
+    pinlabels: [Signal Ground, 12V, 5V Signal]
+    pins: [1, 2, 3]
+
+  ecu:
+    type: ECU Connector
+    pincount: 2
+    pinlabels: [Signal Ground, 5V Signal]
+    pins: [1, 2]
+
+  battery:
+    type: Battery Terminal
+    pincount: 1
+    pinlabels: [12V Power]
+    pins: [1]
+
+cables:
+  main_harness:
+    wirecount: 3
+    wirelabels: [Signal Ground, 12V Power, 5V Signal]
+    colors: [BK, RD, OG]
+
+connections:
+  - - trigger_sensor: [1, 2, 3]
+    - main_harness: [1, 2, 3]
+  - - main_harness: [1, 3]
+    - ecu: [1, 2]
+  - - main_harness: 2
+    - battery: 1
