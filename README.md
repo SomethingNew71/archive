@@ -1,31 +1,59 @@
 # Classic Mini DIY Archive
 
-This repository contains all of the markdown files used by Nuxt Content to generate the archive section on Classic Mini DIY's main website.
+A TypeScript-based CLI tool project that processes PDF documents into web-ready content for the main Classic Mini DIY website. This repository serves as both a content management system for automotive documentation and a set of utilities for processing that content.
 
 > Note: You must also update the [content.config.ts](https://github.com/Classic-Mini-DIY/classicminidiy/blob/main/content.config.ts) in the main repo as well when creating new collections
 
-## Purpose
+## Architecture
 
-The purpose of this repository is to store and manage the content for the archive section, ensuring that all information is organized and easily accessible. Without muddying the main website repository with content, this repository allows for easy updates and contributions to the archive section.
+The project consists of:
 
-## Structure
+1. **Content Repository**: Markdown files organized in `content/archive/` with subdirectories for adverts, catalogues, manuals, and tuning documentation
+2. **CLI Tools**: TypeScript utilities for processing PDF files, generating previews, and managing S3 content
+3. **Wiring Diagrams**: WireViz integration for generating technical diagrams
 
-The repository is structured to facilitate easy navigation and updates to the content. Each markdown file corresponds to a specific article or piece of content on the website. Please note that the folder and file structure align to the paths generated on the website.
+## Development
 
-```plaintext
-Example:
-
-content/archive/manuals/ADK1152.md
-
-translates to
-
-https://classicminidiy.com/archive/manuals/ADK1152
-
+### Setup
+```bash
+npm install
+npm run build
 ```
 
-## Usage
+### CLI Commands
+```bash
+# Generate image previews from PDFs
+archive-tools generate-previews --source ./pdfs --output ./images
 
-To contribute or make changes to the content, simply edit or create the relevant markdown files and submit a pull request. All changes will be reviewed and merged accordingly.
+# Generate markdown files for web content
+archive-tools generate-markdown --source ./pdfs --output ./content/archive/manuals --aws-location https://bucket.s3.amazonaws.com --prefix mini
+
+# Download files from S3
+archive-tools s3-download --bucket bucket-name --prefix path/ --output ./downloads
+```
+
+### Build Commands
+- `npm run build` - Compile TypeScript to `dist/`
+- `npm start` - Run the CLI tool (requires build first)
+- `npm run prepare` - Build project (runs automatically on install)
+
+## File Structure
+
+The repository structure aligns with website URL paths:
+
+```plaintext
+content/archive/manuals/ADK1152.md → https://classicminidiy.com/archive/manuals/ADK1152
+```
+
+Content is organized into:
+- `adverts/` - Classic Mini advertisements
+- `catalogues/` - Parts catalogues and documentation
+- `manuals/` - Technical manuals and guides
+- `tuning/` - Engine tuning maps and technical data
+
+## Integration
+
+This repository feeds content to the main Classic Mini DIY Nuxt.js website via Nuxt Content. Changes here are automatically consumed by the main website.
 
 ## Contact
 

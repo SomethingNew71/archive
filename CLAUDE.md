@@ -23,12 +23,7 @@ The project consists of:
      - `image-preview-maker.ts` - Converts PDFs to image previews using pdf2pic
      - `directory-maker.ts` - Generates markdown files from PDF metadata
 
-3. **Wiring Diagrams**: WireViz (https://github.com/wireviz/WireViz) for generating wiring diagrams:
-   - Source YAML files stored in `src/diagrams/`
-   - Used to create technical diagrams for electronic products sold in store
-   - Generates professional wiring diagrams to support product sales
-
-4. **Build System**: ESNext TypeScript compilation with output to `dist/`
+3. **Build System**: ESNext TypeScript compilation with output to `dist/`
 
 ## Development Commands
 
