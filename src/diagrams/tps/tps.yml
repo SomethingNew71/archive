@@ -7,23 +7,25 @@ connectors:
     type: Connector
     subtype: 3-pin male
     pinlabels: [5V - A, Signal GND - B, TPS Signal - C]
-    pincolors: [RD, BK, YE]
     notes: Throttle Position Sensor
+    image:
+      src: cross-section.png
+      caption: Cross-section
+      height: 200
 
   ECU:
     type: Connector
     subtype: ECU socket
-    pinlabels: [5V Supply, Signal Ground, TPS Input]
-    pincolors: [RD, BK, YE]
-    notes: Engine Control Unit
+    pinlabels: [5V Supply, Signal Ground, TPS - AVI]
+    notes: Colors may vary depending on the manufacturer.
 
 cables:
   TPS_Harness:
     gauge: 22 AWG
     length: 0.5 m
     wirecount: 3
-    colors: [RD, YE, BK]
-    notes: TPS sensor harness
+    colors: [OG, BKWH, WHOG]
+    notes: Colors used may vary depending on the manufacturer.
 
 connections:
   - - TPS: [1, 2, 3]
